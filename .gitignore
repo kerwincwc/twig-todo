@@ -1,0 +1,9 @@
+temp/
+tmp/
+uploads/
+upload/
+dev.*.*
+test.*.*
+*.test.*
+*.dev.*
+.phpintel

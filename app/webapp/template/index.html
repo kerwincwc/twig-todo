@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container my-5">
+	<h1>Twig Todo App</h1>
+	<form class="form mb-2" method="POST" action="{{ config.root }}/{% if task.id %}update/{{ task.id }}{% else %}add{% endif %}">
+		<input class="form-control" name="todo" value="{{ task.task }}" required>
+		<button class="mt-2 btn btn-primary">Add Todo</button>
+	</form>
+	<hr>
+	<div class="mt-2">
+		<ul class="task-items">
+			{%- if not task_list -%}
+				<li class="task-item mb-3"><span class="task-id">No tasks</span></li>
+			{% endif %}
+			{%- for tasks in task_list -%}
+				{%- set task_status = tasks.completed == 1 ? 'complete' : 'not-complete' -%}
+				<li class="task-item mb-3">
+					<span class="task-id"><i class="fa-solid fa-hashtag"></i>{{ tasks.id }}</span>
+					<span class="task-name task-{{ task_status }}">
+						{{ tasks.task }}
+					</span>
+					<span class="task-status">
+					{%- if tasks.completed == 1 -%}
+						<a href="{{ config.root }}/update/{{ tasks.id }}/0" role="button" class="btn btn-success">Completed</a>
+					{%- else -%}
+						<a href="{{ config.root }}/update/{{ tasks.id }}/1" role="button" class="btn btn-secondary">Not Completed</a>
+					{%- endif -%}
+						<a href="{{ config.root }}/{{ tasks.id }}" role="button" class="btn btn-primary">Update</a>
+						<a href="{{ config.root }}/delete/{{ tasks.id }}" role="button" class="btn btn-danger">Delete Task</a>
+					</span>
+				</li>
+			{%- endfor -%}
+		</ul>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,3 @@
+Options +SymLinksIfOwnerMatch
+
+deny from all

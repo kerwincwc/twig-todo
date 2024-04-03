@@ -1,0 +1,34 @@
+@font-face {
+  font-display: swap; font-family: 'Inter'; font-style: normal; font-weight: 400; src: url('./webfonts/inter-v13-latin-regular.woff2') format('woff2');
+}
+@font-face {
+  font-display: swap; font-family: 'Poppins'; font-style: normal; font-weight: 400; src: url('./webfonts/poppins-v20-latin-regular.woff2') format('woff2');
+}
+@font-face {
+  font-display: swap; font-family: 'Roboto'; font-style: normal; font-weight: 400; src: url('../webfonts/roboto-v30-latin-regular.woff2') format('woff2');
+}
+@font-face {
+  font-display: swap; font-family: 'Roboto'; font-style: normal; font-weight: 400; src: url('../webfonts/roboto-v30-latin-regular.woff2') format('woff2');
+}
+
+body{ font-family: 'Inter', sans-serif; }
+.note-editable.card-block{min-height:240px;}
+
+.error-code{ color: rgba(255, 0, 0, 0.61); font-size: 5rem; font-weight: 700; }
+.error-msg{ font-size: 1.25rem; }
+.text-xs{ font-size: 0.77rem; }
+.text-sm{ font-size: 0.88rem; }
+.text-lg{ font-size: 1.1rem; }
+.text-xl{ font-size: 1.25rem; }
+.text-xxl{ font-size: 1.5rem; }
+.text-block{ display: block; }
+.text-iblock{ display: inline-block; }
+.form-helptext{ display: inline-block; margin-left: 0.25rem; cursor: help; }
+.form-hidden{ display: none; }
+
+.task-items{ list-style-type: none; }
+.task-item span{ display:block; }
+.task-item .task-id{ font-size:125%; }
+.task-item .task-name{ margin-block: 0.5rem; }
+.task-item .task-name.task-complete{ text-decoration: line-through; color: var(--bs-secondary); font-style: italic; }
+.task-item .task-status a{ margin-right: 1rem; }
